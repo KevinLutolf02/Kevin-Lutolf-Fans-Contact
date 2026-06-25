@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin Lutolf — Official Fan Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f7f6;
+      --surface: #ffffff;
+      --border: #e4e4e0;
+      --border-strong: #c8c8c2;
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a56;
+      --text-muted: #9a9a94;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-bg: #eff6ff;
+      --accent-text: #1d4ed8;
+      --success-bg: #f0fdf4;
+      --success-text: #15803d;
+      --warning-bg: #fffbeb;
+      --warning-border: #fcd34d;
+      --warning-text: #92400e;
+      --radius: 8px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141413;
+        --surface: #1e1e1c;
+        --border: #2e2e2a;
+        --border-strong: #444440;
+        --text-primary: #f0f0ec;
+        --text-secondary: #9a9a94;
+        --text-muted: #5a5a56;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+        --accent-bg: #1e2d45;
+        --accent-text: #93c5fd;
+        --success-bg: #14271e;
+        --success-text: #4ade80;
+        --warning-bg: #271f0e;
+        --warning-border: #92400e;
+        --warning-text: #fcd34d;
+      }
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .page {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 2.5rem 2rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--success-bg);
+      color: var(--success-text);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--accent-bg);
+      color: var(--accent-text);
+      font-size: 26px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      border: 2px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    /* Form */
+    .form-body {
+      padding: 2rem;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      background: var(--bg);
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: 9px 12px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      appearance: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .notice {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--warning-bg);
+      border: 0.5px solid var(--warning-border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--warning-text);
+      line-height: 1.5;
+      margin-top: 1.5rem;
+    }
+
+    .notice i { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 11px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .submit-btn:hover { background: var(--accent-hover); }
+    .submit-btn:active { transform: scale(0.99); }
+
+    /* Contact info */
+    .contact-section {
+      padding: 0 2rem 2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row i { font-size: 18px; color: var(--text-muted); }
+
+    /* Success */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .success-screen .icon {
+      font-size: 48px;
+      color: var(--success-text);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .success-screen h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .success-screen p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 340px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .reset-btn {
+      background: none;
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: 8px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .reset-btn:hover { background: var(--bg); }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 1.5rem 2rem;
+      border-top: 0.5px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 0; }
+      .page { border-radius: 0; border-left: none; border-right: none; min-height: 100vh; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="page" role="main">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="badge">
+      <i class="ti ti-circle-check" aria-hidden="true"></i>
+      Official fan contact
+    </div>
+    <div class="avatar" aria-hidden="true">KL</div>
+    <h1>Kevin Lutolf</h1>
+    <p>Reach out through the official channel below. Our management team personally reviews every fan message.</p>
+  </div>
+
+  <!-- Form -->
+  <div class="form-body" id="form-area">
+    <p class="section-label">Your details</p>
+
+    <div class="row">
+      <div class="field">
+        <label for="fname">First name</label>
+        <input type="text" id="fname" placeholder="Jane" autocomplete="given-name" />
+      </div>
+      <div class="field">
+        <label for="lname">Last name</label>
+        <input type="text" id="lname" placeholder="Smith" autocomplete="family-name" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="jane@email.com" autocomplete="email" />
+    </div>
+
+    <div class="field">
+      <label for="country">Country</label>
+      <input type="text" id="country" placeholder="e.g. Switzerland" autocomplete="country-name" />
+    </div>
+
+    <hr class="divider" />
+    <p class="section-label">Your message</p>
+
+    <div class="field">
+      <label for="subject">Subject</label>
+      <select id="subject">
+        <option value="">Select a topic</option>
+        <option>General fan message</option>
+        <option>Collaboration inquiry</option>
+        <option>Media or press request</option>
+        <option>Event or appearance</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="msg">Message</label>
+      <textarea id="msg" placeholder="Write your message here..."></textarea>
+    </div>
+
+    <div class="notice">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>This form is managed exclusively by Kevin Lutolf's official management team. We read every message and respond as soon as possible.</span>
+    </div>
+
+    <button class="submit-btn" onclick="handleSubmit()">Send message</button>
+  </div>
+
+  <!-- Contact info -->
+  <div class="contact-section" id="contact-section">
+    <hr class="divider" />
+    <p class="section-label">Official contact</p>
+    <div class="contact-row">
+      <i class="ti ti-mail" aria-hidden="true"></i>
+      <!-- REPLACE with your real management email -->
+      management@kevinlutolf.com
+    </div>
+    <div class="contact-row">
+      <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+      <!-- REPLACE with official Instagram handle -->
+      @kevinlutolf
+    </div>
+  </div>
+
+  <!-- Success screen -->
+  <div class="success-screen" id="success-screen">
+    <i class="ti ti-circle-check icon" aria-hidden="true"></i>
+    <h2>Message sent</h2>
+    <p>Thank you for reaching out. Our team will get back to you at the email address you provided.</p>
+    <button class="reset-btn" onclick="resetForm()">Send another message</button>
+  </div>
+
+  <div class="footer">
+    &copy; <span id="year"></span> Kevin Lutolf. All rights reserved. &nbsp;|&nbsp; Official management only.
+  </div>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function handleSubmit() {
+    function handleSubmit() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const msg = document.getElementById('msg').value.trim();
+  const subject = document.getElementById('subject').value;
+
+  if (!fname) { alert('Please enter your first name.'); return; }
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  if (!subject) { alert('Please select a subject.'); return; }
+  if (!msg) { alert('Please write your message before sending.'); return; }
+
+  fetch('https://formspree.io/f/xvzjkvqk', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fname, email, subject, msg,
+      country: document.getElementById('country').value })
+  }).then(res => {
+    if (res.ok) {
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('contact-section').style.display = 'none';
+      document.getElementById('success-screen').style.display = 'block';
+    } else { alert('Something went wrong. Please try again.'); }
+  }).catch(() => alert('Network error. Please try again.'));
+}
+  }
+
+  function resetForm() {
+    document.getElementById('fname').value = '';
+    document.getElementById('lname').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('country').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('msg').value = '';
+    document.getElementById('form-area').style.display = 'block';
+    document.getElementById('contact-section').style.display = 'block';
+    document.getElementById('success-screen').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
