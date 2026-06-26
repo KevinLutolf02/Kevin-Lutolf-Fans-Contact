@@ -1,1 +1,0 @@
-# Kevin-Lutolf-Fans-Contact
